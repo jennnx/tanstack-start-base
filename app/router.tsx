@@ -1,18 +1,18 @@
-import { createRouter as createTanStackRouter } from "@tanstack/react-router";
-import { routeTree } from "./routeTree.gen";
+import { createRouter as createTanStackRouter } from '@tanstack/react-router';
+import { routeTree } from './routeTree.gen';
 
 export function createRouter() {
-    const router = createTanStackRouter({
-        routeTree,
-        defaultPreload: "intent",
-        // TODO: Add default error and not found components
-    });
+  const router = createTanStackRouter({
+    routeTree,
+    defaultPreload: 'intent',
+    // TODO: Add default error and not found components
+  });
 
-    return router;
+  return router;
 }
 
-declare module "@tanstack/react-router" {
-    interface Register {
-        router: ReturnType<typeof createRouter>;
-    }
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: ReturnType<typeof createRouter>;
+  }
 }
